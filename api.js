@@ -13,12 +13,16 @@ api.use(function(err, req, res, next) {
 
 api.get('/iecho', async(req, res, next) => {
     const { text } = req.query
+    let responseJson = {}
 
     if (text === undefined) {
         res.status(400).send({ error: 'no text' })
     } else {
         let reversedText = reverseText(text)
-        res.json({ text: reversedText })
+        responseJson.text = reversedText
+            // if text is palindrome then add a flag
+        if (text == reversedText) responseJson.palindrome = true
+        res.json(responseJson)
     }
 })
 

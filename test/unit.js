@@ -19,21 +19,12 @@ describe('Testing library:', function() {
 describe('Testing endpoint:', function() {
     describe('GET /api/iecho success', function() {
         it('get respond 200 with JSON', function(done) {
-
             request
                 .get('/api/iecho?text=abc')
                 .expect('Content-Type', /json/)
-                .expect(200, done)
-
-
-            /*
-            const response = await request.get('/api/iecho')
-            done()
-            /*
-            console.log(response.status)
-            console.log('pass')
-            expect(response.status).toBe(200)*/
-
+                .expect(200, {
+                    text: 'cba'
+                }, done)
         })
     })
 
@@ -43,6 +34,18 @@ describe('Testing endpoint:', function() {
                 .get('/api/iecho')
                 .expect('Content-Type', /json/)
                 .expect(400, done)
+        })
+    })
+
+    describe('GET /api/iecho success palindrome', function() {
+        it('get respond 200 with JSON and the palindrome flag', function(done) {
+            request
+                .get('/api/iecho?text=asa')
+                .expect('Content-Type', /json/)
+                .expect(200, {
+                    text: 'asa',
+                    palindrome: true
+                }, done)
         })
     })
 })
