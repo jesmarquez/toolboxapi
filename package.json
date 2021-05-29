@@ -1,0 +1,25 @@
+{
+    "name": "toolboxapi",
+    "version": "0.1.0",
+    "description": "API Toolbox",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jesmarquez/toolboxapi.git"
+    },
+    "keywords": [
+        "api",
+        "js",
+        "expressjs"
+    ],
+    "author": "jesmqz",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jesmarquez/toolboxapi/issues"
+    },
+    "homepage": "https://github.com/jesmarquez/toolboxapi#readme"
+}
