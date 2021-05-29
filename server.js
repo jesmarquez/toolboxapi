@@ -12,11 +12,6 @@ const host = 'localhost'
 
 app.use('/api', api)
 
-app.use(function(err, req, res, next) {
-    console.error(err.stack)
-    res.status(500).send('Something broke!')
-})
-
 const handleFatalError = (err) => {
     console.error(err.message)
     console.error(err.stack)

@@ -9,27 +9,40 @@ const expect = require("chai").expect;
 
 describe('Testing library:', function() {
     describe('Check reverseText function', function() {
-        it('Check the returned value using: assert.equal(value, value', function() {
-            result = reverseText('abc')
-            assert.equal(result, 'cba')
+        it('should return a reversed text', function() {
+            result = reverseText('abcdefg')
+            assert.equal(result, 'gfedcba')
         })
     })
 })
 
 describe('Testing endpoint:', function() {
-    it('gets the test endpoint', function(done) {
+    describe('GET /api/iecho success', function() {
+        it('get respond 200 with JSON', function(done) {
 
-        request
-            .get('/api/iecho?text=abc')
-            .expect('Content-Type', /json/)
-            .expect(200, done);
-        /*
-        const response = await request.get('/api/iecho')
-        done()
-        /*
-        console.log(response.status)
-        console.log('pass')
-        expect(response.status).toBe(200)*/
+            request
+                .get('/api/iecho?text=abc')
+                .expect('Content-Type', /json/)
+                .expect(200, done)
 
+
+            /*
+            const response = await request.get('/api/iecho')
+            done()
+            /*
+            console.log(response.status)
+            console.log('pass')
+            expect(response.status).toBe(200)*/
+
+        })
+    })
+
+    describe('Check endpoint GET /api/iecho not found', function() {
+        it('get respond 400', function(done) {
+            request
+                .get('/api/iecho')
+                .expect('Content-Type', /json/)
+                .expect(400, done)
+        })
     })
 })
