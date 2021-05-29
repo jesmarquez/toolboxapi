@@ -6,7 +6,9 @@ api.get('/', function(req, res) {
 })
 
 api.get('/iecho', (req, res) => {
-    res.send('todo reversed text:' + req.query.text)
+    const { text } = req.query
+
+    res.send('todo reversed text:' + text)
 })
 
 module.exports = api

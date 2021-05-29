@@ -3,9 +3,10 @@
     "version": "0.1.0",
     "description": "API Toolbox",
     "main": "server.js",
+
     "scripts": {
         "start": "node server.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "./node_modules/.bin/mocha --report spec"
     },
     "repository": {
         "type": "git",
@@ -24,5 +25,9 @@
     "homepage": "https://github.com/jesmarquez/toolboxapi#readme",
     "dependencies": {
         "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "chai": "^4.3.4",
+        "mocha": "^8.4.0"
     }
 }
