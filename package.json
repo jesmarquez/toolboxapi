@@ -21,5 +21,8 @@
     "bugs": {
         "url": "https://github.com/jesmarquez/toolboxapi/issues"
     },
-    "homepage": "https://github.com/jesmarquez/toolboxapi#readme"
+    "homepage": "https://github.com/jesmarquez/toolboxapi#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
