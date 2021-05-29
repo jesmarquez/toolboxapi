@@ -1,8 +1,10 @@
 const http = require('http')
 const express = require('express')
+const asyncify = require('express-asyncify')
 const api = require('./api')
 
-const app = express()
+// const app = express()
+const app = asyncify(express())
 const server = http.createServer(app)
 
 const port = 3000
@@ -29,3 +31,4 @@ if (!module.parent) {
         console.log('Server running on port 3000!')
     })
 }
+module.exports = app

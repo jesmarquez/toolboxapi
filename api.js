@@ -1,14 +1,17 @@
 const express = require('express')
-const api = express.Router()
+const asyncify = require('express-asyncify')
 
-api.get('/', function(req, res) {
+// const api = express.Router()
+const api = asyncify(express.Router())
+api.get('/', async function(req, res) {
     res.send('API Toolbox')
 })
 
-api.get('/iecho', (req, res) => {
+api.get('/iecho', async(req, res, next) => {
     const { text } = req.query
 
-    res.send('todo reversed text:' + text)
+    res.json({ text: 'cba' })
+
 })
 
 module.exports = api
