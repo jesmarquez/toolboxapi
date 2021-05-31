@@ -23,7 +23,7 @@ if (!module.parent) {
     process.on('uncaughtException', handleFatalError)
     process.on('unhandledRejection', handleFatalError)
 
-    server.listen(PORT, host, () => {
+    server.listen(PORT, () => {
 
         console.log(`API is running at ${ host } on port ${ PORT }`)
     })
