@@ -54,6 +54,14 @@ Retorna un JSON.
         "error": "no text",
     }
 ```
+
+## Ejecutar pruebas
+Para ejecutar las pruebas ejecutar el siguiente comando en el directorio del proyecto.
+
+```
+npm run test
+```
+
 ## Deployment
 
 La aplicación esta en producción en heroku **https://frozen-temple-59746.herokuapp.com**
