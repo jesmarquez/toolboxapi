@@ -2,6 +2,8 @@ const http = require('http')
 const express = require('express')
 const asyncify = require('express-asyncify')
 const api = require('./api')
+const cors = require('cors')
+
 
 // const app = express()
 const app = asyncify(express())
@@ -11,6 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 const host = 'localhost'
 
+app.use(cors())
 app.use('/', api)
 
 const handleFatalError = (err) => {

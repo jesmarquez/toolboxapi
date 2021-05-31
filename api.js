@@ -26,7 +26,7 @@ api.get('/iecho', async(req, res, next) => {
     }
 })
 
-api.get('*', function(req, res) {
+api.get('*', function(req, res, next) {
     res.status(404).send({ error: '404 NOT FOUND' })
 });
 
