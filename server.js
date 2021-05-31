@@ -7,10 +7,10 @@ const api = require('./api')
 const app = asyncify(express())
 const server = http.createServer(app)
 
-const port = 3000
+const port = 5000
 const host = 'localhost'
 
-app.use('/api', api)
+app.use('/', api)
 
 const handleFatalError = (err) => {
     console.error(err.message)
@@ -23,7 +23,8 @@ if (!module.parent) {
     process.on('unhandledRejection', handleFatalError)
 
     server.listen(port, host, () => {
-        console.log('Server running on port 3000!')
+
+        console.log(`API is running at ${ host } on port ${ port }`)
     })
 }
 module.exports = app

@@ -17,10 +17,10 @@ describe('Testing library:', function() {
 })
 
 describe('Testing endpoint:', function() {
-    describe('GET /api/iecho success', function() {
+    describe('GET /iecho success', function() {
         it('get respond 200 with JSON', function(done) {
             request
-                .get('/api/iecho?text=abc')
+                .get('/iecho?text=abc')
                 .expect('Content-Type', /json/)
                 .expect(200, {
                     text: 'cba'
@@ -28,19 +28,19 @@ describe('Testing endpoint:', function() {
         })
     })
 
-    describe('Check endpoint GET /api/iecho not found', function() {
+    describe('Check endpoint GET /iecho not found', function() {
         it('get respond 400', function(done) {
             request
-                .get('/api/iecho')
+                .get('/iecho')
                 .expect('Content-Type', /json/)
                 .expect(400, done)
         })
     })
 
-    describe('GET /api/iecho success palindrome', function() {
+    describe('GET /iecho success palindrome', function() {
         it('get respond 200 with JSON and the palindrome flag', function(done) {
             request
-                .get('/api/iecho?text=asa')
+                .get('/iecho?text=asa')
                 .expect('Content-Type', /json/)
                 .expect(200, {
                     text: 'asa',

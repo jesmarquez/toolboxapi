@@ -22,7 +22,7 @@ api.get('/iecho', async(req, res, next) => {
         responseJson.text = reversedText
             // if text is palindrome then add a flag
         if (text == reversedText) responseJson.palindrome = true
-        res.json(responseJson)
+        res.status(200).json(responseJson)
     }
 })
 
